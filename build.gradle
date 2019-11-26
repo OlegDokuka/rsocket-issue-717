@@ -1,0 +1,24 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    implementation platform('io.rsocket:rsocket-bom:1.0.0-RC5')
+    compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.9'
+
+    implementation 'io.rsocket:rsocket-core'
+    implementation 'io.rsocket:rsocket-load-balancer'
+    implementation 'io.rsocket:rsocket-transport-netty'
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
